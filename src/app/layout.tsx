@@ -1,6 +1,5 @@
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { UserContextProvider } from '../context/UserContext'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <UserContextProvider>
+          {children}
+        </UserContextProvider>
+      </body>
     </html>
   )
 }
