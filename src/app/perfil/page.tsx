@@ -10,26 +10,25 @@ import { useContext, useEffect } from "react";
 
 export default function Profile() {
 
-    const router = useRouter();
+  const router = useRouter();
 
-    useVerifyLogin();
-    const { userName, setUserName } = useContext(UserContext);
-  
-    useEffect(() => {
-      const userToken = JSON.parse(sessionStorage.getItem("userToken"));
-  
-      if (userToken) {
-        const userData = jwtDecode(userToken.token);
-        setUserName(userData.name);
-      } else {
-        router.push('/login');
-      }
-    }, [])
-  
-    return (
-      <Layout>
-        <Header title="Perfil" userName={userName} />
-      </Layout>
-    );
-  };
-  
+  useVerifyLogin();
+  const { userName, setUserName } = useContext(UserContext);
+
+  useEffect(() => {
+    const userToken = JSON.parse(sessionStorage.getItem("userToken"));
+
+    if (userToken) {
+      const userData = jwtDecode(userToken.token);
+      setUserName(userData.name);
+    } else {
+      router.push('/login');
+    }
+  }, [])
+
+  return (
+    <Layout>
+      <Header title="Perfil" userName={userName} />
+    </Layout>
+  );
+};

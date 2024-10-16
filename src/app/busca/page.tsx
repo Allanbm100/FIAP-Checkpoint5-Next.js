@@ -43,7 +43,7 @@ export default function Search() {
   };
 
   const handleNavigate = (cityCode: number) => {
-    router.push(`/city/${cityCode}`);
+    router.push(`/${cityCode}`);
   };
 
   return (

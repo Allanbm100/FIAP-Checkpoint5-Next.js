@@ -14,5 +14,5 @@ export const useVerifyLogin = () => {
             const userData = jwtDecode(sessionData.token);
             setUserName(userData.name)
         }
-        }, [setUserName])
+    }, [setUserName])
 }

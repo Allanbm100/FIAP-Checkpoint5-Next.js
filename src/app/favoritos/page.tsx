@@ -8,13 +8,12 @@ import { useContext } from "react";
 
 export default function Favorites() {
 
-    useVerifyLogin();
-    const { userName } = useContext(UserContext);
-  
-    return (
-      <Layout>
-        <Header title="Favoritos" userName={userName} />
-      </Layout>
-    );
-  }
-  
+  useVerifyLogin();
+  const { userName } = useContext(UserContext);
+
+  return (
+    <Layout>
+      <Header title="Favoritos" userName={userName} />
+    </Layout>
+  );
+}
