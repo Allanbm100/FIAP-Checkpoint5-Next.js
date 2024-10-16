@@ -42,6 +42,8 @@ export default function Login() {
                 setUserName(userData.name);
 
                 router.push("/perfil");
+            } else {
+                console.error("Token inválido ou ausente");
             }
         } catch (error) {
             console.log("error", error);

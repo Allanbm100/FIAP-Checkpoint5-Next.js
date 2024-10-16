@@ -1,3 +1,4 @@
+import styles from './Layout.module.css'
 import { Menu } from "../../components/menu/Menu";
 
 interface LayoutProps {
@@ -6,7 +7,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
     return (
-        <div className="StyledLayout">
+        <div className={styles.StyledLayout}>
             <main>{children}</main>
             <Menu />
         </div>
